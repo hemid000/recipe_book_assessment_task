@@ -59,6 +59,9 @@ text-decoration: none !important;
     .headline .cards {
       grid-template-columns: repeat(2, 1fr);
     }
+    .headline h2{
+      margin-bottom: 20px;
+    }
   }
 @media (max-width: 500px) {
     .headline .cards {
