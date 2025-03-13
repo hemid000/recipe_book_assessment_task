@@ -14,7 +14,7 @@ const RecipeListPage: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/recipes") // Backend API
+      .get("http://localhost:5000/api/recipes")
       .then((res) => setRecipes(res.data))
       .catch((err) => console.error(err));
   }, []);
