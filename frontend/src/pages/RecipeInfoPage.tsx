@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "../styles/RecipeInfoPage.css";
 
 interface RecipeDetails {
   idMeal: string;
@@ -17,7 +18,7 @@ const RecipeInfoPage: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/recipes/${id}`) // Backend API
+      .get(`http://localhost:5000/api/recipes/${id}`)
       .then((res) => setRecipe(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -25,13 +26,24 @@ const RecipeInfoPage: React.FC = () => {
   if (!recipe) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h1>{recipe.strMeal}</h1>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} width="300" />
-      <p><strong>Category:</strong> {recipe.strCategory}</p>
-      <p><strong>Origin:</strong> {recipe.strArea}</p>
-      <p><strong>Instructions:</strong> {recipe.strInstructions}</p>
-    </div>
+    <>
+      <h2>{recipe.strMeal}</h2>
+      <div className="recipe_info">
+        <div className="img_box">
+        <img src={recipe.strMealThumb} alt={recipe.strMeal} width="300" />
+
+        </div>
+        <p>
+          <strong>Category:</strong> {recipe.strCategory}
+        </p>
+        <p>
+          <strong>Origin:</strong> {recipe.strArea}
+        </p>
+        <p>
+          <strong>Instructions:</strong> {recipe.strInstructions}
+        </p>
+      </div>
+    </>
   );
 };
 

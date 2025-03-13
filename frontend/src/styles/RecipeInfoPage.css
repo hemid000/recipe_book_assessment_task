@@ -1,0 +1,32 @@
+h2{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recipe_info {
+   padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+}
+.recipe_info .img_box{
+    display: flex;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+}
+.recipe_info .img_box img{
+  height: auto;
+  margin-bottom: 40px;
+
+   width: 30%;
+   object-fit: contain;
+   border-radius: 10px;
+}
+
+.recipe_info p{
+    margin-bottom: 10px;
+font-size: 18px;
+}
